@@ -2,7 +2,7 @@
 
 built to show off a production-ready full stack solution
 
-## [Demo on Heroku](http://meanstack-demo.herokuapp.com/) ## 
+### [Demo on Heroku](http://meanstack-demo.herokuapp.com/)
 
 ## Components ##
 
@@ -10,6 +10,7 @@ built to show off a production-ready full stack solution
 - [Express.js](http://sailsjs.org)
 - [LESS + Bootstrap](http://getbootstrap.com/)
 - [AngularJS v1.2](http://angularjs.org/)
+- [Twilio-Node](http://twilio.github.io/twilio-node/)
 - [Font Awesome](http://fontawesome.io/)
 - [Jade Templates](http://jade-lang.com/)
 - [Socket.io](http://socket.io/)
@@ -31,7 +32,7 @@ sudo npm -g install sails bower
 
 Clone this repo:
 ```sh
-git clone https://github.com/
+git clone https://github.com/bradoyler/mean-stack-demo
 ```
 
 Run `npm` and `bower` to install all dependencies:
