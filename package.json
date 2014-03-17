@@ -1,0 +1,35 @@
+{
+  "name": "mean-stack-demo",
+  "private": true,
+  "version": "0.0.2",
+  "description": "Mongo / Express /  AngularJS / Node + (Bootstrap/Sails.js)",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.3.x"
+  },
+  "dependencies": {
+    "sails": "0.9.8",
+    "grunt": "0.4.2",
+    "sails-disk": "~0.9.0",
+    "optimist": "0.3.4",
+    "then-jade": "1.1.0",
+    "jade": "1.0.2",
+    "passport": "0.1.18",
+    "bcrypt": "0.7.7",
+    "async": "0.2.9",
+    "passport-local": "0.1.6",
+    "bower": "1.3.1",
+    "grunt-contrib-less": "~0.8.3",
+    "twilio": "^1.6.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "debug": "node debug app.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "main": "app.js",
+  "repository": "",
+  "author": "Brad Oyler <bradoyler@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {}
+}

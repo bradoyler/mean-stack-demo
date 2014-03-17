@@ -1,0 +1,53 @@
+extends ../layout
+
+block body
+  .container.ng-cloak(ng-controller="SailsSocketCtrl")
+    .row
+      .col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
+        .panel.panel-default(ng-controller="TodoCtrl")
+          .panel-heading.clearfix
+            h1.panel-title ToDo List
+
+          ul.list-group
+            li.list-group-item(ng-repeat="todo in todos track by $index")
+              a.btn.btn-default.pull-right(ng-click="openModal(todo)")
+                i.fa.fa-pencil-square-o.fa-2
+              a(ng-click="toggleCompleted(todo)")
+                i(ng-class="{ fa: true, 'fa-lg': true, 'fa-check-square-o': todo.isComplete, 'fa-square-o': !todo.isComplete }")
+              = ' '
+              span.todo-title(ng-class="{ strikethru: todo.isComplete }") {{todo.title}} : 
+              span.todo-body(ng-class="{ strikethru: todo.isComplete }")  {{todo.body}}
+          .panel-footer.clearfix
+            span.pull-left
+              strong= '{{remainingCount}} '
+              ng-pluralize(count="remainingCount", when="{ one: 'item left', other: 'items left' }")
+            .pull-right
+              
+              button.btn.btn-danger(ng-click="clearCompletedTodos()", ng-show="remainingCount < todos.length")
+                 i.fa.fa-trash-o  Completed ({{todos.length - remainingCount}})  
+              button.btn.btn-primary(ng-click="openModal(newTodo)")
+                i.fa.fa-plus-square   
+
+        a.pull-right.btn.btn-default(href='/profile')
+           i.fa.fa-phone  Update Mobile number 
+
+  script(type="text/ng-template", id="todoModalContent.html")
+    .modal-header
+      h3.modal-title
+        span(ng-show="todo.id") Edit
+        span(ng-hide="todo.id") New
+        = ' Task'
+    .modal-body
+      form(role="form")
+        .form-group
+          label(for="todoTitle") Task name
+          input.form-control(type="text", id="todoTitle",
+            placeholder="title", ng-model="todo.title")
+          
+          label(for="todoBody") Description
+          input.form-control(type="text", id="todoBody",
+            placeholder="body", ng-model="todo.body")
+    .modal-footer
+      button.btn.btn-default(ng-click="cancel()") Cancel
+      button.btn.btn-danger(ng-click="ok('delete')", ng-show="todo.id") Delete
+      button.btn.btn-primary(ng-click="ok('save')") Save
