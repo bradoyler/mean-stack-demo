@@ -1,6 +1,6 @@
 # MEAN-stack-demo #
 
-built to show off a production-ready full stack solution
+a production-ready real-time stack for building api-driven web apps
 
 ### [Demo on Heroku](http://meanstack-demo.herokuapp.com/)
 
